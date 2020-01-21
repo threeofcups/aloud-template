@@ -2,10 +2,12 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 const app = express();
-const port = 3000;
-
+const PORT = process.env.PORT || 3000;
 //dev visualizer
 const { middleware, visualizer } = require('express-routes-visualizer');
+
+app.use(express.static(`${__dirname}/../client/dist`));
+
 app.use(
   '/routes',
   middleware({ httpMethods: true }),
@@ -57,7 +59,6 @@ var root = {
   hello: () => {
     return 'Hello world!';
   },
-  
 };
 
 
@@ -69,5 +70,5 @@ app.use('/graphql', graphqlHTTP({
 
 app.get('/', (req, res) => res.send('hello world'));
 
-app.listen(port, () => console.log(`Express app is listening on port ${port}!🛸`))
+app.listen(PORT, () => console.log(`Express app is listening on port ${PORT}!🚀🛸`))
 console.log('Running a GraphQL API server at http://localhost:3000/graphql');
