@@ -1,13 +1,33 @@
 const express = require('express');
+const https = require('https');
 const graphqlHTTP = require('express-graphql');
+const path = require('path');
 const { buildSchema } = require('graphql');
-const app = express();
 const PORT = process.env.PORT || 3000;
-//dev visualizer
+//route visualizer
 const { middleware, visualizer } = require('express-routes-visualizer');
 
-app.use(express.static(`${__dirname}/../client/dist`));
+//routes
+const homeRouter = require('./routes/home');
+const apiRouter = require('./routes/api');
+const libRouter = require('./routes/library');
+const proRouter = require('./routes/profile');
+const recRouter = require('./routes/recording');
 
+const app = express();
+const CLIENT_PATH = path.join(__dirname, '../client/dist/');
+
+app.use(express.json({ extended: false }));
+app.use(express.static(CLIENT_PATH));
+
+
+app.use('/home', homeRouter);
+app.use('/', apiRouter);
+app.use('/profile', proRouter);
+app.use('/recording', recRouter);
+app.use('/library', libRouter);
+
+//visualizer instance
 app.use(
   '/routes',
   middleware({ httpMethods: true }),
@@ -61,14 +81,13 @@ var root = {
   },
 };
 
-
 app.use('/graphql', graphqlHTTP({
   schema: schema,
   rootValue: root,
   graphiql: true,
 }));
 
-app.get('/', (req, res) => res.send('hello world'));
+//app.get('/', (req, res) => res.send('hello world'));
 
 app.listen(PORT, () => console.log(`Express app is listening on port ${PORT}!🚀🛸`))
 console.log('Running a GraphQL API server at http://localhost:3000/graphql');
