@@ -1,6 +1,7 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
+const { db_name } = require('./db/connection');
 const app = express();
 const port = 3000;
 
@@ -70,3 +71,4 @@ app.get('/', (req, res) => res.send('hello world'));
 
 app.listen(port, () => console.log(`Express app is listening on port ${port}!🛸`))
 console.log('Running a GraphQL API server at http://localhost:3000/graphql');
+console.log(`Connected to PostgreSQL db: ${db_name} 🌌`);
