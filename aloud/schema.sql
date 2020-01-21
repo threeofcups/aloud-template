@@ -5,7 +5,7 @@ CREATE DATABASE aloud;
 \c aloud;
 
 CREATE TABLE users (
-  id INT GENERATED ALWAYS AS IDENTITY,  
+  id INT GENERATED ALWAYS AS IDENTITY,
   bio TEXT,
   email VARCHAR(50) NOT NULL,
   username VARCHAR(50) NOT NULL,
@@ -17,11 +17,11 @@ CREATE TABLE users (
 
 CREATE TYPE setting AS ENUM('private', 'public');
 CREATE TABLE recordings (
-  id INT GENERATED ALWAYS AS IDENTITY,  
+  id INT GENERATED ALWAYS AS IDENTITY,
   id_user INT references users(id),
   title VARCHAR(255) NOT NULL,
   description TEXT,
-  url_recording TEXT NOT NULL, 
+  url_recording TEXT NOT NULL,
   created_at TIMESTAMP NOT NULL,
   published setting,
   speech_to_text TEXT,
@@ -29,37 +29,37 @@ CREATE TABLE recordings (
 );
 
 CREATE TABLE collections (
-  id INT GENERATED ALWAYS AS IDENTITY,  
+  id INT GENERATED ALWAYS AS IDENTITY,
   id_user_creator INT references users(id),
   title VARCHAR(255) NOT NULL,
   description TEXT,
   created_at TIMESTAMP NOT NULL,
-  count_recordings INT NOT NULL, 
+  count_recordings INT NOT NULL,
   url_image TEXT,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE collections_recordings (
-  id_collection INT references collections(id),  
+  id_collection INT references collections(id),
   id_recording INT references recordings(id)
 );
 
 CREATE TABLE users_saved_collections (
-  id INT GENERATED ALWAYS AS IDENTITY,  
+  id INT GENERATED ALWAYS AS IDENTITY,
   id_user INT references users(id),
   id_collection INT references collections(id),
   created_at TIMESTAMP NOT NULL
 );
 
 CREATE TABLE users_saved_recordings (
-  id INT GENERATED ALWAYS AS IDENTITY,  
+  id INT GENERATED ALWAYS AS IDENTITY,
   id_user INT references users(id),
   id_recording INT references recordings(id),
   created_at TIMESTAMP NOT NULL
 );
 
 
-/* 
+/*
 
 working users insertion
 insert into users(bio, email, username, password, url_image, name_display)

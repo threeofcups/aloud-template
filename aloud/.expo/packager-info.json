@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": "https://gz-yv4.anonymous.aloud.exp.direct",
-  "packagerNgrokUrl": "https://packager.gz-yv4.anonymous.aloud.exp.direct",
-  "ngrokPid": 16513
+  "packagerPort": 19005,
+  "packagerPid": 41468,
+  "expoServerNgrokUrl": "https://7v-i8d.anonymous.aloud.exp.direct",
+  "packagerNgrokUrl": "https://packager.7v-i8d.anonymous.aloud.exp.direct",
+  "ngrokPid": 41492
 }
