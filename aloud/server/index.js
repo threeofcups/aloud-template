@@ -13,7 +13,7 @@ app.use(
 )
 
 // Construct a schema, using GraphQL schema language
-var schema = buildSchema(`
+const schema = buildSchema(`
 
 type Query {
   hello: String
@@ -57,6 +57,7 @@ var root = {
   hello: () => {
     return 'Hello world!';
   },
+  
 };
 
 
