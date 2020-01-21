@@ -3,7 +3,7 @@
 .DS_Store
 
 #expo
-.expo/
+./aloud/expo/*
 
 # Xcode
 #
