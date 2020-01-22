@@ -25,7 +25,7 @@ export default class App extends Component {
         <Text>@{this.state['proName']}</Text>
         <Image
           style={{width: 100, height: 100}}
-          source={{uri: 'https://res.cloudinary.com/dahfjsacf/image/upload/v1579656042/qc35njypmtfvjt9baaxq.jpg'}}
+          source={{uri: this.state['proPic']}}
         />
         <Text>Bio: {this.state['proBio']}</Text>
         <Text style={styles.instructions}>{instructions}</Text>
