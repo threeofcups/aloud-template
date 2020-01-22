@@ -9,12 +9,12 @@ CREATE DATABASE aloud;
 
 CREATE TABLE users (
   id INT GENERATED ALWAYS AS IDENTITY,
-  bio TEXT,
-  email VARCHAR(50) NOT NULL,
   username VARCHAR(50) NOT NULL,
   password CHAR(50),
-  url_image TEXT,
+  email VARCHAR(50) NOT NULL,
   name_display VARCHAR(64),
+  bio TEXT,
+  url_image TEXT,
   PRIMARY KEY (id)
 );
 
@@ -25,9 +25,9 @@ CREATE TABLE recordings (
   title VARCHAR(255) NOT NULL,
   description TEXT,
   url_recording TEXT NOT NULL,
-  created_at TIMESTAMP NOT NULL,
   published setting,
   speech_to_text TEXT,
+  created_at TIMESTAMP NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -36,9 +36,9 @@ CREATE TABLE collections (
   id_user_creator INT references users(id),
   title VARCHAR(255) NOT NULL,
   description TEXT,
-  created_at TIMESTAMP NOT NULL,
   count_recordings INT NOT NULL,
   url_image TEXT,
+  created_at TIMESTAMP NOT NULL,
   PRIMARY KEY (id)
 );
 
