@@ -3,7 +3,8 @@ const https = require('https');
 const graphqlHTTP = require('express-graphql');
 const path = require('path');
 const { buildSchema } = require('graphql');
-const { db_name } = require('./db/connection');
+const db = require('./db/pg-adaptor');
+
 const PORT = process.env.PORT || 3000;
 //route visualizer
 const { middleware, visualizer } = require('express-routes-visualizer');
@@ -89,6 +90,7 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 //app.get('/', (req, res) => res.send('hello world'));
-app.listen(port, () => console.log(`Express app is listening on port ${port}!🛸`))
-console.log('Running a GraphQL API server at http://localhost:3000/graphql');
-console.log(`Connected to PostgreSQL db: ${db_name} 🌌`);
+app.listen(PORT, () => {
+  console.log(`Express app is listening on port ${PORT}!🛸`)
+  console.log('Running a GraphQL API server at http://localhost:3000/graphql');
+});
