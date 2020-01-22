@@ -13,7 +13,7 @@ const proData = [
   email: 'example@example.com',
   username: 'biff',
   password: 'mcfly',
-  url_mage: 'https://en.wikipedia.org/wiki/File:BiffTannenBackToTheFuture1985.jpg',
+  url_image: 'https://en.wikipedia.org/wiki/File:BiffTannenBackToTheFuture1985.jpg',
   name_display: 'rippedBiff',
   },
   {
@@ -22,7 +22,7 @@ const proData = [
   email: 'example2@example.com',
   username: 'marty',
   password: 'lorraine',
-  url_mage: 'https://en.wikipedia.org/wiki/File:Lea_Thompson_February_2015_crop.JPG',
+  url_image: 'https://en.wikipedia.org/wiki/File:Lea_Thompson_February_2015_crop.JPG',
   name_display: 'mr_mcfly',
   },
   {
@@ -31,7 +31,7 @@ const proData = [
   email: 'example3@example.com',
   username: 'lorraine',
   password: 'ilovemarty',
-  url_mage: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjHp_bB2pfnAhULTawKHecUA0wQjRx6BAgBEAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMarty_McFly&psig=AOvVaw1r_OTQ1VF6wVZMWfoMjIzK&ust=1579799666959159',
+  url_image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjHp_bB2pfnAhULTawKHecUA0wQjRx6BAgBEAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMarty_McFly&psig=AOvVaw1r_OTQ1VF6wVZMWfoMjIzK&ust=1579799666959159',
   name_display: 'rainey',
   },
   {
@@ -40,7 +40,7 @@ const proData = [
   email: 'example4@example.com',
   username: 'doc',
   password: 'greatscott',
-  url_mage: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwj0z6fK2pfnAhVKUK0KHZ0ND6gQjRx6BAgBEAQ&url=https%3A%2F%2Fcreative-analytics.corsairs.network%2Fdoc-brown-5d16b2b626f0&psig=AOvVaw218H9Q_lQ92MOSfchnIcLd&ust=1579799685389177',
+  url_image: 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwj0z6fK2pfnAhVKUK0KHZ0ND6gQjRx6BAgBEAQ&url=https%3A%2F%2Fcreative-analytics.corsairs.network%2Fdoc-brown-5d16b2b626f0&psig=AOvVaw218H9Q_lQ92MOSfchnIcLd&ust=1579799685389177',
   name_display: 'doc_brown' ,
   }
 ]
