@@ -23,8 +23,8 @@ app.use(express.json({ extended: false }));
 app.use(express.static(CLIENT_PATH));
 
 
-app.use('/home', homeRouter);
 app.use('/', apiRouter);
+app.use('/home', homeRouter);
 app.use('/profile', proRouter);
 app.use('/recording', recRouter);
 app.use('/library', libRouter);
@@ -89,8 +89,6 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
 }));
 
-//app.get('/', (req, res) => res.send('hello world'));
-app.listen(PORT, () => {
-  console.log(`Express app is listening on port ${PORT}!🛸`)
-  console.log('Running a GraphQL API server at http://localhost:3000/graphql');
-});
+
+app.listen(PORT, () => console.log(`Express app is listening on port ${PORT}!🚀🛸`))
+console.log('Running a GraphQL API server at http://localhost:3000/graphql');
