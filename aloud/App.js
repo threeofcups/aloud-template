@@ -11,7 +11,8 @@ const instructions = Platform.select({
 
 export default class App extends Component {
   state = { 
-    'proName': proData[1].username,
+    'proInfo': proData[1].username,
+    'proName': proData[1].name_display,
     'proPic': proData[1].url_image,
     'proBio': proData[1].bio,
 
@@ -19,14 +20,14 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>three of cups</Text>
-        <Text style={styles.instructions}>lightning thunder rain</Text>
-        <Text>{this.state['proName']}</Text>
+        <Text style={styles.welcome}>aloud</Text>
+    <Text style={styles.instructions}>{this.state['proInfo']}'s Profile</Text>
+        <Text>@{this.state['proName']}</Text>
         <Image
           style={{width: 100, height: 100}}
           source={{uri: 'https://res.cloudinary.com/dahfjsacf/image/upload/v1579656042/qc35njypmtfvjt9baaxq.jpg'}}
         />
-        <Text>{this.state['proBio']}</Text>
+        <Text>Bio: {this.state['proBio']}</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
     );
