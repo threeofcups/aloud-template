@@ -1,5 +1,8 @@
 -- sudo -u postgres psql -f schema.sql
 
+-- delete in production
+ALTER USER postgres with encrypted password 'postgres';
+
 DROP DATABASE IF EXISTS aloud;
 CREATE DATABASE aloud;
 \c aloud;
